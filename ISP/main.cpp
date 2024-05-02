@@ -15,25 +15,30 @@ public:
     }
 };
 
-class User : public Game_UI{
+class game{
+public:
+    void virtual start(){}
+};
 
+class develop{
+public:
+    void virtual develop_mode(){}
+};
+
+class User : public game{
 public:
     void start() override{
-        cout << "User start a game" << endl;
-    }
-    void develop_mode() override{
-        cout << "You can't do this" << endl;
+        cout << "Start game" << endl;
     }
 };
 
-class Coder: public Game_UI{
-
+class Coder : public game, develop{
 public:
     void start() override{
-        cout << "Coder start a game" << endl;
+        cout << "Coder start game" << endl;
     }
     void develop_mode() override{
-        cout << "Coder turn on develop mode" << endl;
+        cout << "Develop mode on" << endl;
     }
 };
 
@@ -42,9 +47,7 @@ int main(){
     User Jack;
     Coder Shawn;
     Jack.start();
-    Jack.develop_mode();
     Shawn.start();
     Shawn.develop_mode();
-
     return 0;
 }
