@@ -37,7 +37,7 @@ class USA_Transfer : public Transfer{
         }
 
 }; 
-
+TEST_F
 int main(){
     std::shared_ptr<Taiwan_Dollars> money = std::make_shared<Taiwan_Dollars>();
     money->total(100);
